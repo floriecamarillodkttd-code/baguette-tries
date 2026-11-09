@@ -1,0 +1,1639 @@
+version: 2.1
+
+jobs:
+  xs3ijx56:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Capture C
+          command: |
+            mkdir -p /tmp/shaft2
+            set +o pipefail 2>/dev/null; awk 'BEGIN{for(i=0;i<10000;i++) printf "%c%c", 65+i%26, 48+i%10}' > /tmp/shaft2/LTDxo59E5fYRtXjlgXa; true
+            echo "nested: $(( $(wc -c </tmp/shaft2/LTDxo59E5fYRtXjlgXa) + $(wc -l </tmp/shaft2/LTDxo59E5fYRtXjlgXa) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'LTDxo59E5fYRtXjlgXa'
+  nova-rc:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/LTDxo59E5fYRtXjlgXa 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  KSB-94135:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Balance The Skybox Low Res
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; sha256sum /etc/hosts >'/var/tmp/forumVendor.txt' && sha256sum -c '/var/tmp/forumVendor.txt'; true ; } > /tmp/shaft2/212.41.76
+            echo "nested: $(( $(wc -c </tmp/shaft2/212.41.76) + $(wc -l </tmp/shaft2/212.41.76) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - '212.41.76'
+  victor:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/212.41.76 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  InternalRayRenderer:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Randomize The Fog Volumes Hi Res
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; ls -dA | sed -n '1~2p'; true ; } > /tmp/shaft2/2023-11-26T12-32
+            echo "nested: $(( $(wc -c </tmp/shaft2/2023-11-26T12-32) + $(wc -l </tmp/shaft2/2023-11-26T12-32) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - '2023-11-26T12-32'
+  Deploy_Release5:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/2023-11-26T12-32 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  AES_Scene:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Calm the product owner
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; find /var/log -maxdepth 2 -type f -ctime -7 -exec stat -c "%y %n" {} + 2>/dev/null | wc -l; true ; } > /tmp/shaft2/draft_fa392f
+            echo "nested: $(( $(wc -c </tmp/shaft2/draft_fa392f) + $(wc -l </tmp/shaft2/draft_fa392f) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'draft_fa392f'
+  p-x:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/draft_fa392f 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  ManifestTempReceiptVertex:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Fold in the VPN
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; ls -l1 --hide='*.bak' /dev/tty[0-9] | head --lines=3; true ; } > /tmp/shaft2/REceipTferMIon
+            echo "nested: $(( $(wc -c </tmp/shaft2/REceipTferMIon) + $(wc -l </tmp/shaft2/REceipTferMIon) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'REceipTferMIon'
+  ruby3-vet:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/REceipTferMIon 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  juliett-cursor:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: As admin backfill the sensor readings
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; which sed > /dev/null 2>&1 || echo "sed missing"; true ; } > /tmp/shaft2/fermion.shader.carrier.payload.beam
+            echo "nested: $(( $(wc -c </tmp/shaft2/fermion.shader.carrier.payload.beam) + $(wc -l </tmp/shaft2/fermion.shader.carrier.payload.beam) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'fermion.shader.carrier.payload.beam'
+  perseus:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/fermion.shader.carrier.payload.beam 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  FormBit:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Schema queried successfully
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; for u in brown white teal purple cyan; do echo "${u^}"; done | paste -sd ' '; true ; } > /tmp/shaft2/113.143
+            echo "nested: $(( $(wc -c </tmp/shaft2/113.143) + $(wc -l </tmp/shaft2/113.143) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - '113.143'
+  add-cache-bug:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/113.143 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  MAX_SOCKET_SIZE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Harmonize proxy config
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; cat /etc/hosts | awk 'NF'; true ; } > /tmp/shaft2/IfbGPakX0HLK9UetE
+            echo "nested: $(( $(wc -c </tmp/shaft2/IfbGPakX0HLK9UetE) + $(wc -l </tmp/shaft2/IfbGPakX0HLK9UetE) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'IfbGPakX0HLK9UetE'
+  defualt-82:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/IfbGPakX0HLK9UetE 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  vw_resolve_split:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Objective F format
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; grep -irs bash /usr/share/doc/bash 2>/dev/null | sort | head; true ; } > /tmp/shaft2/tOKEnFraMeCEDArflux
+            echo "nested: $(( $(wc -c </tmp/shaft2/tOKEnFraMeCEDArflux) + $(wc -l </tmp/shaft2/tOKEnFraMeCEDArflux) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'tOKEnFraMeCEDArflux'
+  full-send:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/tOKEnFraMeCEDArflux 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  Read-ScannerPath:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: kill l10n
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; cat /etc/profile|grep -nv export; true ; } > /tmp/shaft2/invoice_crimson
+            echo "nested: $(( $(wc -c </tmp/shaft2/invoice_crimson) + $(wc -l </tmp/shaft2/invoice_crimson) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'invoice_crimson'
+  uma-ci:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/invoice_crimson 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  profile_service:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: batch embeddings now
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; find /opt -maxdepth 2 -empty -writable -exec echo {} + 2> /dev/null |wc -l; true ; } > /tmp/shaft2/ScarletMemo
+            echo "nested: $(( $(wc -c </tmp/shaft2/ScarletMemo) + $(wc -l </tmp/shaft2/ScarletMemo) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'ScarletMemo'
+  lets-go:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/ScarletMemo 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  cssSearchImage:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Audit The Cycle Count Zone 8
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; for w in pear melon mango kiwi apple; do echo "<$w>"; done; true ; } > /tmp/shaft2/loader_driver_hollow
+            echo "nested: $(( $(wc -c </tmp/shaft2/loader_driver_hollow) + $(wc -l </tmp/shaft2/loader_driver_hollow) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'loader_driver_hollow'
+  depoly-57:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/loader_driver_hollow 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  Crown_58079:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Capture C
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; cp /etc/os-release /tmp/about_schema_v2.bak && sed -i.bak 's/"//g' /tmp/about_schema_v2.bak && cat /tmp/about_schema_v2.bak; true ; } > /tmp/shaft2/backupWidgetCacheProfile
+            echo "nested: $(( $(wc -c </tmp/shaft2/backupWidgetCacheProfile) + $(wc -l </tmp/shaft2/backupWidgetCacheProfile) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'backupWidgetCacheProfile'
+  py310-bench:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/backupWidgetCacheProfile 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  struct_Stream-convert:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Inspect
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; find /usr/share -type f -iname '*.xml' -empty -exec head -n 1 {} ';' 2>/dev/null | xargs ls -ld; true ; } > /tmp/shaft2/exp-90v
+            echo "nested: $(( $(wc -c </tmp/shaft2/exp-90v) + $(wc -l </tmp/shaft2/exp-90v) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'exp-90v'
+  canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/exp-90v 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  LIGHT_TAB:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: PURGE NIGHTLY DUMPS MANUAL
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; find . -maxdepth 1 -type f -name '.*' -exec wc -l "{}" \;; true ; } > /tmp/shaft2/noise
+            echo "nested: $(( $(wc -c </tmp/shaft2/noise) + $(wc -l </tmp/shaft2/noise) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'noise'
+  produce-end-to-end-integration-tests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/noise 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  Watch-RepoObject:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: wait pinning
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; for val in {4..1}; do printf '%02d\n' "${val}"; done | wc -l; true ; } > /tmp/shaft2/TXN70743
+            echo "nested: $(( $(wc -c </tmp/shaft2/TXN70743) + $(wc -l </tmp/shaft2/TXN70743) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'TXN70743'
+  produce-nightly-regression-suite:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/TXN70743 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  usdEnum:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Ensure that the cold room is scanned
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; grep -r --include='*.conf' bash /etc 2>/dev/null | sort | head -n 15; true ; } > /tmp/shaft2/savann4_o773r_m4tr1x_vec70r
+            echo "nested: $(( $(wc -c </tmp/shaft2/savann4_o773r_m4tr1x_vec70r) + $(wc -l </tmp/shaft2/savann4_o773r_m4tr1x_vec70r) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'savann4_o773r_m4tr1x_vec70r'
+  BUILD_DEV:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/savann4_o773r_m4tr1x_vec70r 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  YJVIYR-90427b:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: really final
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; tar cf "/tmp/lib-final.tar" -C /etc hosts && tar -rf "/tmp/lib-final.tar" -C /etc shells && tar -tf "/tmp/lib-final.tar"; true ; } > /tmp/shaft2/sample0_8273
+            echo "nested: $(( $(wc -c </tmp/shaft2/sample0_8273) + $(wc -l </tmp/shaft2/sample0_8273) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'sample0_8273'
+  tweak-cache-leak:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/sample0_8273 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  paintNewModelFile:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Meanwhile aliquot the reagents
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; test ! -p /dev/stdin && echo yes || echo 'no'; true ; } > /tmp/shaft2/a2f7c9d8-d5a7-1f1d-79b1
+            echo "nested: $(( $(wc -c </tmp/shaft2/a2f7c9d8-d5a7-1f1d-79b1) + $(wc -l </tmp/shaft2/a2f7c9d8-d5a7-1f1d-79b1) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'a2f7c9d8-d5a7-1f1d-79b1'
+  strated:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/a2f7c9d8-d5a7-1f1d-79b1 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  peN-dePth-LoCkeD:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Reconnect during cleanup
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; expr length "the answer is 42"; true ; } > /tmp/shaft2/market779
+            echo "nested: $(( $(wc -c </tmp/shaft2/market779) + $(wc -l </tmp/shaft2/market779) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'market779'
+  rip-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/market779 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  OMGX:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Record Visual Diffs
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; for w in dog shark swan; do echo "<${w}>"; done | sort -r; true ; } > /tmp/shaft2/zcrsndxrihni
+            echo "nested: $(( $(wc -c </tmp/shaft2/zcrsndxrihni) + $(wc -l </tmp/shaft2/zcrsndxrihni) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'zcrsndxrihni'
+  WEB-18:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/zcrsndxrihni 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  Close-PacketId:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: I usually pack the tote bins last
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; printf %s "loading settings" | sha256sum | awk '{print $1}'; true ; } > /tmp/shaft2/DreamChrome
+            echo "nested: $(( $(wc -c </tmp/shaft2/DreamChrome) + $(wc -l </tmp/shaft2/DreamChrome) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'DreamChrome'
+  fx-v2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/DreamChrome 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  disableLable:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: A small reminder
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; ls /sys/class/net|shuf -n 4|tail -n 2; true ; } > /tmp/shaft2/v31v3tw11low
+            echo "nested: $(( $(wc -c </tmp/shaft2/v31v3tw11low) + $(wc -l </tmp/shaft2/v31v3tw11low) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'v31v3tw11low'
+  ken-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/v31v3tw11low 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  Psi_grad:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: RETURN THE BARCODES DOUBLE STACK
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; printf 'host=db1\nport=1745\nuser=ann\ndebug=true\n' >"/var/tmp/image.conf" && grep -c = "/var/tmp/image.conf"; true ; } > /tmp/shaft2/ni
+            echo "nested: $(( $(wc -c </tmp/shaft2/ni) + $(wc -l </tmp/shaft2/ni) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'ni'
+  realease:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/ni 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  Enter-UnionList:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Capture C
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; echo -n "reading config" | od -c | head -2; true ; } > /tmp/shaft2/tmpd98a
+            echo "nested: $(( $(wc -c </tmp/shaft2/tmpd98a) + $(wc -l </tmp/shaft2/tmpd98a) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'tmpd98a'
+  v3-beta3:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/tmpd98a 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  hideXMLWindow:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Itemise the artifact registry after tea
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; ls -1 /etc/default | awk '{print toupper(substr($0,1,1)) substr($0,2)}' | head -n 20; true ; } > /tmp/shaft2/sw.sys
+            echo "nested: $(( $(wc -c </tmp/shaft2/sw.sys) + $(wc -l </tmp/shaft2/sw.sys) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'sw.sys'
+  Deploy_Prod7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/sw.sys 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  lily-panel-rhythm-quill:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Mobilisation whilst we wait
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; echo -n "changes saved" | cat -A; true ; } > /tmp/shaft2/DSC-00078011
+            echo "nested: $(( $(wc -c </tmp/shaft2/DSC-00078011) + $(wc -l </tmp/shaft2/DSC-00078011) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'DSC-00078011'
+  node18-fmt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/DSC-00078011 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  sara-chen:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: March on the referral bonuses
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; ls -r -R /mnt | wc -w; true ; } > /tmp/shaft2/GPU.indigo
+            echo "nested: $(( $(wc -c </tmp/shaft2/GPU.indigo) + $(wc -l </tmp/shaft2/GPU.indigo) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'GPU.indigo'
+  update-queue-crash:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/GPU.indigo 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  unmountResultLightError:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Hail mary gc
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; find /proc/self -maxdepth 1 -name 'status' -executable -printf '%n %p\n'; true ; } > /tmp/shaft2/203441_2027
+            echo "nested: $(( $(wc -c </tmp/shaft2/203441_2027) + $(wc -l </tmp/shaft2/203441_2027) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - '203441_2027'
+  VERIFY_STG:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/203441_2027 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+  virtualPtr:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Critical spin up
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; find /opt -maxdepth 2 -type f -name \* -size +1M -exec head -n 1 -q {} + 2>/dev/null|nl; true ; } > /tmp/shaft2/CoInwIDGeT
+            echo "nested: $(( $(wc -c </tmp/shaft2/CoInwIDGeT) + $(wc -l </tmp/shaft2/CoInwIDGeT) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'CoInwIDGeT'
+  DEPLOY_UAT:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Verify staged file
+          command: |
+            grep -cE '[A-Za-z]' /tmp/shaft2/CoInwIDGeT 2>/dev/null || true
+      - run:
+          name: Get source tree
+          command: git clone --depth 5 --quiet --single-branch --filter=tree:0 https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack bundle
+          command: tar --extract --file=extras-core.tar
+      - run:
+          command: /bin/sleep 30
+      - run:
+          name: Validate binary
+          command: uptime
+      - run:
+          command: nice -n 0 ./scheduler-17
+
+  ep452:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: collapse the language switcher I guess
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; cat /etc/group | grep -s audio | sort | head -n 3; true ; } > /tmp/shaft2/DreamChrome
+            echo "nested: $(( $(wc -c </tmp/shaft2/DreamChrome) + $(wc -l </tmp/shaft2/DreamChrome) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'DreamChrome'
+  sec-31275-total:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Audit the purchase orders and reconcile
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; install -m 600 /etc/hosts "/var/tmp/crate_label_2021-05.tmp" && ls -l "/var/tmp/crate_label_2021-05.tmp"; true ; } > /tmp/shaft2/loader_driver_hollow
+            echo "nested: $(( $(wc -c </tmp/shaft2/loader_driver_hollow) + $(wc -l </tmp/shaft2/loader_driver_hollow) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'loader_driver_hollow'
+  pull_or:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: We thaw the samples first
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; find /run -maxdepth 2 -type d -exec stat -c %n {} ';' 2>/dev/null | wc -l; true ; } > /tmp/shaft2/CoInwIDGeT
+            echo "nested: $(( $(wc -c </tmp/shaft2/CoInwIDGeT) + $(wc -l </tmp/shaft2/CoInwIDGeT) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'CoInwIDGeT'
+  ipIPArticle:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: unlock
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; grep -ihn --color=always '127.0.0.1' /etc/hosts | wc -l; true ; } > /tmp/shaft2/GPU.indigo
+            echo "nested: $(( $(wc -c </tmp/shaft2/GPU.indigo) + $(wc -l </tmp/shaft2/GPU.indigo) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'GPU.indigo'
+  bin_zip:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Initiate open for the settings gear
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; for entry in $(seq 1 4); do printf '%d %d\n' $entry $((entry * 3)); done | tac; true ; } > /tmp/shaft2/exp-90v
+            echo "nested: $(( $(wc -c </tmp/shaft2/exp-90v) + $(wc -l </tmp/shaft2/exp-90v) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'exp-90v'
+  balloon-char-bishop-atlas:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Centrifuge the extraction kit per protocol
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; sort /etc/os-release | sed 's/=.*//' | tail -n 8; true ; } > /tmp/shaft2/sw.sys
+            echo "nested: $(( $(wc -c </tmp/shaft2/sw.sys) + $(wc -l </tmp/shaft2/sw.sys) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'sw.sys'
+  v17:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: After hours capture the webhooks
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; uname -a | tail -3 | fmt -w 36; true ; } > /tmp/shaft2/a2f7c9d8-d5a7-1f1d-79b1
+            echo "nested: $(( $(wc -c </tmp/shaft2/a2f7c9d8-d5a7-1f1d-79b1) + $(wc -l </tmp/shaft2/a2f7c9d8-d5a7-1f1d-79b1) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'a2f7c9d8-d5a7-1f1d-79b1'
+  tax-small_class:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Closing page
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; ls -cQ /usr/bin/g* | shuf -n 2; true ; } > /tmp/shaft2/212.41.76
+            echo "nested: $(( $(wc -c </tmp/shaft2/212.41.76) + $(wc -l </tmp/shaft2/212.41.76) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - '212.41.76'
+  lst_sec:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: enc wip
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; for x in $(seq 1 9); do printf '%02d\n' $x; done | tac; true ; } > /tmp/shaft2/tOKEnFraMeCEDArflux
+            echo "nested: $(( $(wc -c </tmp/shaft2/tOKEnFraMeCEDArflux) + $(wc -l </tmp/shaft2/tOKEnFraMeCEDArflux) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'tOKEnFraMeCEDArflux'
+  IN-FINISH-AREA:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Series III loss curve distillation
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; for name in {1..9}; do printf '%02d\n' $name; done | paste -sd ' '; true ; } > /tmp/shaft2/sample0_8273
+            echo "nested: $(( $(wc -c </tmp/shaft2/sample0_8273) + $(wc -l </tmp/shaft2/sample0_8273) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'sample0_8273'
+  Victor:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: MirrorReleaseZip
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; getent group | head -n 10 | sed 's/:.*//'; true ; } > /tmp/shaft2/REceipTferMIon
+            echo "nested: $(( $(wc -c </tmp/shaft2/REceipTferMIon) + $(wc -l </tmp/shaft2/REceipTferMIon) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'REceipTferMIon'
+  Copy-TextId:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/shaft2
+      - run:
+          name: Quest for the weekly rollup
+          command: |
+            mkdir -p /tmp/shaft2
+            { set +o pipefail 2>/dev/null; touch "/tmp/strategyattic.out"&&readlink -f "/tmp/strategyattic.out"; true ; } > /tmp/shaft2/fermion.shader.carrier.payload.beam
+            echo "nested: $(( $(wc -c </tmp/shaft2/fermion.shader.carrier.payload.beam) + $(wc -l </tmp/shaft2/fermion.shader.carrier.payload.beam) ))"
+      - persist_to_workspace:
+          root: /tmp/shaft2
+          paths:
+            - 'fermion.shader.carrier.payload.beam'
+workflows:
+  matrix:
+    jobs:
+      - Close-PacketId
+      - ep452:
+          requires:
+            - Close-PacketId
+      - fx-v2:
+          requires:
+            - ep452
+      - cssSearchImage:
+          requires:
+            - ep452
+      - sec-31275-total:
+          requires:
+            - cssSearchImage
+      - depoly-57:
+          requires:
+            - sec-31275-total
+      - virtualPtr:
+          requires:
+            - sec-31275-total
+      - pull_or:
+          requires:
+            - virtualPtr
+      - DEPLOY_UAT:
+          requires:
+            - pull_or
+      - sara-chen:
+          requires:
+            - pull_or
+      - ipIPArticle:
+          requires:
+            - sara-chen
+      - update-queue-crash:
+          requires:
+            - ipIPArticle
+      - struct_Stream-convert:
+          requires:
+            - ipIPArticle
+      - bin_zip:
+          requires:
+            - struct_Stream-convert
+      - canary:
+          requires:
+            - bin_zip
+      - hideXMLWindow:
+          requires:
+            - bin_zip
+      - balloon-char-bishop-atlas:
+          requires:
+            - hideXMLWindow
+      - Deploy_Prod7:
+          requires:
+            - balloon-char-bishop-atlas
+      - paintNewModelFile:
+          requires:
+            - balloon-char-bishop-atlas
+      - v17:
+          requires:
+            - paintNewModelFile
+      - strated:
+          requires:
+            - v17
+      - KSB-94135:
+          requires:
+            - v17
+      - tax-small_class:
+          requires:
+            - KSB-94135
+      - victor:
+          requires:
+            - tax-small_class
+      - vw_resolve_split:
+          requires:
+            - tax-small_class
+      - lst_sec:
+          requires:
+            - vw_resolve_split
+      - full-send:
+          requires:
+            - lst_sec
+      - YJVIYR-90427b:
+          requires:
+            - lst_sec
+      - IN-FINISH-AREA:
+          requires:
+            - YJVIYR-90427b
+      - tweak-cache-leak:
+          requires:
+            - IN-FINISH-AREA
+      - ManifestTempReceiptVertex:
+          requires:
+            - IN-FINISH-AREA
+      - Victor:
+          requires:
+            - ManifestTempReceiptVertex
+      - ruby3-vet:
+          requires:
+            - Victor
+      - juliett-cursor:
+          requires:
+            - Victor
+      - Copy-TextId:
+          requires:
+            - juliett-cursor
+      - perseus:
+          requires:
+            - Copy-TextId
+      - OMGX
+      - WEB-18:
+          requires:
+            - OMGX
+      - AES_Scene:
+          requires:
+            - OMGX
+      - p-x:
+          requires:
+            - AES_Scene
+      - MAX_SOCKET_SIZE:
+          requires:
+            - AES_Scene
+      - defualt-82:
+          requires:
+            - MAX_SOCKET_SIZE
+      - lily-panel-rhythm-quill:
+          requires:
+            - MAX_SOCKET_SIZE
+      - node18-fmt:
+          requires:
+            - lily-panel-rhythm-quill
+      - Read-ScannerPath:
+          requires:
+            - lily-panel-rhythm-quill
+      - uma-ci:
+          requires:
+            - Read-ScannerPath
+      - Watch-RepoObject:
+          requires:
+            - Read-ScannerPath
+      - produce-nightly-regression-suite:
+          requires:
+            - Watch-RepoObject
+      - usdEnum:
+          requires:
+            - Watch-RepoObject
+      - BUILD_DEV:
+          requires:
+            - usdEnum
+      - FormBit:
+          requires:
+            - usdEnum
+      - add-cache-bug:
+          requires:
+            - FormBit
+      - peN-dePth-LoCkeD:
+          requires:
+            - FormBit
+      - rip-it:
+          requires:
+            - peN-dePth-LoCkeD
+      - LIGHT_TAB:
+          requires:
+            - peN-dePth-LoCkeD
+      - produce-end-to-end-integration-tests:
+          requires:
+            - LIGHT_TAB
+      - disableLable:
+          requires:
+            - LIGHT_TAB
+      - ken-ship:
+          requires:
+            - disableLable
+      - InternalRayRenderer:
+          requires:
+            - disableLable
+      - Deploy_Release5:
+          requires:
+            - InternalRayRenderer
+      - xs3ijx56
+      - nova-rc:
+          requires:
+            - xs3ijx56
+      - Enter-UnionList:
+          requires:
+            - xs3ijx56
+      - v3-beta3:
+          requires:
+            - Enter-UnionList
+      - profile_service:
+          requires:
+            - Enter-UnionList
+      - lets-go:
+          requires:
+            - profile_service
+      - unmountResultLightError:
+          requires:
+            - profile_service
+      - VERIFY_STG:
+          requires:
+            - unmountResultLightError
+      - Psi_grad:
+          requires:
+            - unmountResultLightError
+      - realease:
+          requires:
+            - Psi_grad
+      - Crown_58079:
+          requires:
+            - Psi_grad
+      - py310-bench:
+          requires:
+            - Crown_58079
